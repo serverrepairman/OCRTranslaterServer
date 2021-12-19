@@ -23,7 +23,7 @@ public class Client {
 			public void run() {
 				try {
 					while(true) {
-						byteBuffer = ByteBuffer.allocate(10000);
+						byteBuffer = ByteBuffer.allocate(10000000);
 						int byteCount = socketChannel.read(byteBuffer);
 						byteBuffer.flip();
 						ByteString request = ByteString.copyFrom(byteBuffer);
