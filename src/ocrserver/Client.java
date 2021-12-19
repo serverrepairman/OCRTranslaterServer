@@ -27,7 +27,7 @@ public class Client {
 						int byteCount = socketChannel.read(byteBuffer);
 						byteBuffer.flip();
 						ByteString request = ByteString.copyFrom(byteBuffer);
-						System.out.println("recieved something");
+						System.out.println("recieved : " + request);
 						String response = OCR.Request(request);
 						send(response);
 					}

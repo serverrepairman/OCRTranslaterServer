@@ -39,8 +39,6 @@ public class OCRServer {
 						InetSocketAddress isa = (InetSocketAddress) socketChannel.getRemoteAddress();
 						System.out.println("connected." + isa.getHostName());
 						clients.add(new Client(socketChannel, isa.getHostName()));
-						for(String log : logs)
-								clients.lastElement().send(log);
 					} catch (Exception e) {
 						if (!serverSocketChannel.isOpen()) {
 							stopServer();
