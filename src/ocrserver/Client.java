@@ -22,7 +22,7 @@ public class Client {
 			Charset charset = Charset.forName("UTF-8");
 			public void run() {
 				try {
-					while(true) {
+					while(socketChannel.isConnected()) {
 						byteBuffer = ByteBuffer.allocate(10000000);
 						int byteCount = socketChannel.read(byteBuffer);
 						byteBuffer.flip();
