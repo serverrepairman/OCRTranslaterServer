@@ -21,7 +21,7 @@ public class Client {
 			ByteBuffer byteBuffer = null;
 			public void run() {
 				try {
-					while(socketChannel.isConnected()) {
+					while(true) {
 						System.out.println("receiving... from " + userNum);
 						byteBuffer = ByteBuffer.allocate(10000000);
 						int byteCount = socketChannel.read(byteBuffer);
