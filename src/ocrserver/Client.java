@@ -19,10 +19,10 @@ public class Client {
 	public void receive() {
 		Runnable thread = new Runnable() {
 			ByteBuffer byteBuffer = null;
-			Charset charset = Charset.forName("UTF-8");
 			public void run() {
 				try {
 					while(socketChannel.isConnected()) {
+						System.out.println("receiving... from " + userNum);
 						byteBuffer = ByteBuffer.allocate(10000000);
 						int byteCount = socketChannel.read(byteBuffer);
 						byteBuffer.flip();
